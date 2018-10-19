@@ -3,4 +3,4 @@
 npm install
 npm update
 
-nodemon --config ../nodemon.json 
+node bin/www

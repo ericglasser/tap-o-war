@@ -1,9 +1,8 @@
 {
-    "script": "bin/migrate",
+    "script": "bin/www",
     "ext": "js",
     "env": {
         "NODE_ENV": "development",
-        "LOAD_FIXTURES": "false",
-        "APP_NAME": "mk_migrate"
+        "APP_NAME": "tap-o-war"
     }
 }

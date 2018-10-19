@@ -10,6 +10,11 @@ var teams = {
     blue: 0
 };
 
+var count = {
+    red: 0,
+    blue: 0
+};
+
 var running = false;
 
 const express = require('express');
@@ -17,6 +22,26 @@ const express = require('express');
 let app = express();
 
 app.get('/', (req, res) => res.send('Hello World!'))
+
+app.get('/clear', function (req, res) {
+    teams = {
+        red: 0,
+        blue: 0
+    };
+    
+    count = {
+        red: 0,
+        blue: 0
+    };
+
+    res.json({
+        status: "ok"
+    });
+});
+
+app.get('/count', function (req, res) {
+    res.json(count);
+});
 
 app.get('/start', function (req, res) {
     running = true;
@@ -27,7 +52,7 @@ app.get('/start', function (req, res) {
 
 
 app.get('/stop', function (req, res) {
-    running = true;
+    running = false;
     res.json({
         running: running
     });
@@ -45,7 +70,29 @@ app.get('/join', function (req, res) {
             addTeamBlue(res);
         }
     }
-})
+});
+
+app.get('/click/:team', function (req, res) {
+    if (running) {
+        if (req.param("team") === "red") {
+            count.red++;
+        } else if (req.param("team") === "blue") {
+            count.blue++;
+        }
+    } 
+    res.json(count);
+});
+
+app.get('/click/:team', function (req, res) {
+    if (running) {
+        if (req.param("team") === "red") {
+            count.red++;
+        } else if (req.param("team") === "blue") {
+            count.blue++;
+        }
+    } 
+    res.json(count);
+});
 
 function addTeamRed(res) {
     teams.red++;

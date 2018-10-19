@@ -2,6 +2,7 @@ FROM node:8.12
 
 RUN npm install pm2 -g
 RUN npm install gulp -g
+RUN npm install nodemon -g
 
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app

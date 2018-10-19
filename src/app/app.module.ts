@@ -2,11 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { StartComponent } from './admin/start/start.component';
 import { WarComponent } from './admin/war/war.component';
 import { TeamComponent } from './user/team/team.component';
 import { TapComponent } from './user/tap/tap.component';
 import { FinishComponent } from './user/finish/finish.component';
+import { AppRoutingModule } from './route/route.module';
+import { HomeComponent } from './admin/home/home.component';
+import { StartComponent } from './user/start/start.component';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,12 @@ import { FinishComponent } from './user/finish/finish.component';
     WarComponent,
     TeamComponent,
     TapComponent,
-    FinishComponent
+    FinishComponent,
+    HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

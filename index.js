@@ -10,11 +10,28 @@ var teams = {
     blue: 0
 };
 
+var running = false;
+
 const express = require('express');
 
 let app = express();
 
 app.get('/', (req, res) => res.send('Hello World!'))
+
+app.get('/start', function (req, res) {
+    running = true;
+    res.json({
+        running: running
+    });
+});
+
+
+app.get('/stop', function (req, res) {
+    running = true;
+    res.json({
+        running: running
+    });
+});
 
 app.get('/join', function (req, res) {
     if (teams.red > teams.blue) {

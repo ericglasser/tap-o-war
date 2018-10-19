@@ -25,10 +25,10 @@ export class TeamComponent implements OnInit {
     //   () => console.log('finished retrieving team designation;')
     // );
 
-    if (Math.random() > .5 ) {
-      this.team = 'Red';
+    if (Math.random() > .5) {
+      this.team = 'red';
     } else {
-      this.team = 'Blue';
+      this.team = 'blue';
     }
 
     // query on 300ms to get [start] from api;
@@ -42,8 +42,8 @@ export class TeamComponent implements OnInit {
     this.team = response;
   }
 
-  handlePollStart(response ) {
-    if(response) {
+  handlePollStart(response) {
+    if (response) {
       if (response[this.team] !== 0) {
         // go to tap page;
         this.router.navigate(['/user/tap']);

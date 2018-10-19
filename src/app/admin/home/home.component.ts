@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TapOWarService } from 'src/app/tap-owar.service';
 import { ThrowStmt } from '@angular/compiler';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,8 @@ import { ThrowStmt } from '@angular/compiler';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private tapService: TapOWarService
+    private tapService: TapOWarService,
+    private router: Router;
   ) { }
 
   ngOnInit() {
@@ -25,4 +27,8 @@ export class HomeComponent implements OnInit {
   handleStartWar(response) {
     // no response;
     console.log('called start war API...');
+
+    // redirect to the war page;
+    this.router.navigate(['/admin/war']);
+  }
 }

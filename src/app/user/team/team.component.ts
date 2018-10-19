@@ -30,6 +30,7 @@ export class TeamComponent implements OnInit {
     }
 
     // query on 300ms to get [start] from api;
+    // this.tapService.
   }
 
   handleTeamDesignation(response: string) {

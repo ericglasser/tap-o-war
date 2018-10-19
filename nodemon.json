@@ -1,0 +1,9 @@
+{
+    "script": "bin/migrate",
+    "ext": "js",
+    "env": {
+        "NODE_ENV": "development",
+        "LOAD_FIXTURES": "false",
+        "APP_NAME": "mk_migrate"
+    }
+}

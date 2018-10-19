@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TapOWarService } from 'src/app/tap-owar.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-team',
@@ -11,7 +12,8 @@ export class TeamComponent implements OnInit {
   team: string = '';
 
   constructor(
-    private tapService: TapOWarService
+    private tapService: TapOWarService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -30,11 +32,22 @@ export class TeamComponent implements OnInit {
     }
 
     // query on 300ms to get [start] from api;
-    // this.tapService.
+    this.tapService.pollStart(this.team).subscribe(
+      response => this.handlePollStart(response),
+      error => console.log(error)
+    );
   }
 
   handleTeamDesignation(response: string) {
     this.team = response;
   }
 
+  handlePollStart(response ) {
+    if(response) {
+      if (response[this.team] !== 0) {
+        // go to tap page;
+        this.router.navigate(['/user/tap']);
+      }
+    }
+  }
 }

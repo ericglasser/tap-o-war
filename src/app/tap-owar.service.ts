@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class TapOWarService {
+ 
 
   constructor(
     private http: HttpClient
@@ -19,5 +20,11 @@ export class TapOWarService {
     return this.http.get(
       '/start'
     );
+  }
+
+  pollStart(team: string): any {
+    const url = `/click/${team}`;
+    console.log('run: ${url}');
+    return this.http.get(url);
   }
 }

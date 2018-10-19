@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tap',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TapComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
-  ngOnInit() {
+  ngOnInit(
+    
+  ) {
+  }
+
+  handlePollStart(response) {
+    if (response) {
+      if (response.running === false) {
+        // go to tap page;
+        this.router.navigate(['/user/finish']);
+      }
+    }
   }
 
 }

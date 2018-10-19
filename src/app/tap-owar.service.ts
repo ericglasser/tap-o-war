@@ -5,7 +5,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class TapOWarService {
- 
+
+  baseUrl = `http://tap-o-war.minerva.io:3001`;
 
   constructor(
     private http: HttpClient
@@ -16,14 +17,13 @@ export class TapOWarService {
   }
 
   startWar(): any {
-
     return this.http.get(
-      '/start'
+      `${this.baseUrl}/start`
     );
   }
 
   pollStart(team: string): any {
-    const url = `/click/${team}`;
+    const url = `${this.baseUrl}/click/${team}`;
     console.log('run: ${url}');
     return this.http.get(url);
   }

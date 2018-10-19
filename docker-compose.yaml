@@ -7,7 +7,7 @@ services:
         env_file:
             - .env
         environment:
-            - MONGO_URI=mongodb://mongo:27017/arrow
+            - MONGO_URI=mongodb://mongo:27017/tapowar
             - PORT=3001
             - NODE_ENV=development
         volumes:

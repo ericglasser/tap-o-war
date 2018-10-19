@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class TapOWarService {
 
-  baseUrl = `http://tap-o-war.minerva.io:3001`;
+  baseUrl = `http://tap-o-war.minerva.io`;
 
   constructor(
     private http: HttpClient

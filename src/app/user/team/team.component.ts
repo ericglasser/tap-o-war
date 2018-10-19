@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class TeamComponent implements OnInit {
 
-  team: string = '';
+  team = '';
 
   constructor(
     private tapService: TapOWarService,

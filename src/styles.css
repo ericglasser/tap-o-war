@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+
+body {
+  background: #ddd;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.hidden { display: none; }
+
+.full {
+  position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  text-align: center;
+  font-size: 22px;
+}
+
+.center {
+  top: calc(40% - 18px);
+  position: relative;
+}
+
+button {
+  background: yellow;
+  border: 1px solid #FFFFFF;
+  color: black;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 37px;
+  border: 1px solid #FFFFFF;
+  width: 80%;
+  margin: 0 auto;
+  vertical-align: middle;
+  font-size: 22px;
+  max-width: 200px;
+}
+
+.countdown:before {
+  content: '321...';
+  font-family: monospace;
+  display: inline-block;
+  width: 1ch;
+  overflow: hidden;
+  font-size: 155px;
+  animation:countdowns 6s steps(6) 1;
+}
+
+@keyframes countdowns {
+  0% {text-indent:0}
+  100% {text-indent:-6ch;}
+}
+
+.rope {
+  position: relative;
+  top: 50%;
+  left: 0;
+}

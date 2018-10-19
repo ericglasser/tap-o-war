@@ -1,4 +1,4 @@
-FROM node:8.12-apline
+FROM node:8.12
 
 RUN npm install pm2 -g
 RUN npm install gulp -g

@@ -4,6 +4,9 @@
 
 const Server = require('socket.io');
 const io = new Server();
+const cors = require('cors')
+
+
 
 var teams = {
     red: 0,
@@ -21,7 +24,9 @@ const express = require('express');
 
 let app = express();
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.use(cors());
+
+app.get('/', (req, res) => res.send('tello World!'))
 
 app.get('/clear', function (req, res) {
     teams = {

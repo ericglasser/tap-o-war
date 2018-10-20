@@ -15,8 +15,6 @@ RUN npm install
 # Bundle app source
 COPY . /usr/src/app/
 
-RUN ng build
-
 EXPOSE 80 443
 
 CMD [ "pm2-docker", "ecosystem.config.js" ]
